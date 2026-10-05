@@ -1,0 +1,170 @@
+/* ModeBanner.css */
+:root {
+  --color-bg-live: rgba(22, 101, 52, 0.4);
+  --color-bg-demo: rgba(79, 70, 229, 0.4);
+  --color-bg-hybrid: rgba(139, 92, 246, 0.2);
+  --color-bg-dark: rgba(15, 23, 42, 0.95);
+  --color-primary: #7c3aed;
+  --color-secondary: #ec4899;
+  --font-family: 'Inter', sans-serif;
+}
+
+.mode-banner {
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-family);
+  transition: background 0.3s ease;
+}
+
+.mode-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 0.4rem;
+  border: 1px solid transparent;
+  color: #fff;
+}
+
+.mode-badge.live {
+  background: var(--color-bg-live);
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.mode-badge.demo {
+  background: var(--color-bg-demo);
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+.mode-badge.hybrid {
+  background: var(--color-bg-hybrid);
+  border-color: rgba(139, 92, 246, 0.3);
+}
+
+.mode-switch {
+  display: flex;
+  gap: 0.25rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 0.4rem;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.mode-switch button {
+  font-family: var(--font-family);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.3rem 0.8rem;
+  background: transparent;
+  border: none;
+  color: #bbb;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.mode-switch button.active {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+}
+
+/* Global layout */
+.app-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem;
+  font-family: var(--font-family);
+  color: #e5e7eb;
+}
+
+.agent-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* HybridDemoPanel enhancements */
+.hybrid-panel {
+  background: linear-gradient(145deg, rgba(15,23,42,0.98) 0%, rgba(30,41,59,0.95) 100%);
+  border: 1px solid rgba(139,92,246,0.3);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(139,92,246,0.08), 0 8px 32px rgba(0,0,0,0.4);
+}
+
+.hybrid-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.hybrid-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #e2e8f0;
+  margin: 0;
+}
+
+.hybrid-subtitle {
+  font-size: 0.75rem;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.progress-bar {
+  height: 0.25rem;
+  background: rgba(51,65,85,0.6);
+  border-radius: 0.25rem;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #7c3aed, #ec4899);
+  transition: width 0.4s ease;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 8px rgba(139,92,246,0.4);
+}
+
+.action-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  font-weight: 800;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.start-btn {
+  background: linear-gradient(135deg, #7c3aed 0%, #ec4899 100%);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(124,58,237,0.4);
+}
+
+.run-btn {
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  border: 1px solid rgba(99,102,241,0.3);
+}
+
+.reset-btn {
+  background: rgba(51,65,85,0.5);
+  color: #94a3b8;
+  border: 1px solid rgba(71,85,105,0.5);
+}
